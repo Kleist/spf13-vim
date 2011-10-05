@@ -182,6 +182,8 @@
 	nmap <leader>f8 :set foldlevel=8<CR>
 	nmap <leader>f9 :set foldlevel=9<CR>
 
+	nmap æ za
+
     "clearing highlighted search
     nmap <silent> <leader>/ :nohlsearch<CR>
 
