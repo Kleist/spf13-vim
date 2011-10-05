@@ -103,6 +103,7 @@
 	set showmatch					" show matching brackets/parenthesis
 	set incsearch					" find as you type search
 	set hlsearch					" highlight search terms
+	nnoremap ; :set invhlsearch<CR>
 	set winminheight=0				" windows can be 0 line high 
 	set ignorecase					" case insensitive search
 	set smartcase					" case sensitive when uc present
