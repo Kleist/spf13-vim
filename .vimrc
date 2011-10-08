@@ -103,7 +103,7 @@
 	set showmatch					" show matching brackets/parenthesis
 	set incsearch					" find as you type search
 	set hlsearch					" highlight search terms
-	nnoremap ; :set invhlsearch<CR>
+	nmap ; :set invhlsearch<CR>
 	set winminheight=0				" windows can be 0 line high 
 	set ignorecase					" case insensitive search
 	set smartcase					" case sensitive when uc present
@@ -123,10 +123,10 @@
 " Formatting {
 	set nowrap                     	" wrap long lines
 	set autoindent                 	" indent at the same level of the previous line
-	set shiftwidth=4               	" use indents of 4 spaces
+	set shiftwidth=2               	" use indents of 4 spaces
 	set expandtab 	  	     		" tabs are spaces, not tabs
-	set tabstop=4 					" an indentation every four columns
-	set softtabstop=4 				" let backspace delete indent
+	set tabstop=2 					" an indentation every four columns
+	set softtabstop=2 				" let backspace delete indent
 	"set matchpairs+=<:>            	" match, to be used with % 
 	set pastetoggle=<F12>          	" pastetoggle (sane indentation on pastes)
 	"set comments=sl:/*,mb:*,elx:*/  " auto format comment blocks
@@ -145,10 +145,10 @@
 
 
 	" Easier moving in tabs and windows
-	map <C-J> <C-W>j
-	map <C-K> <C-W>k
-	map <C-L> <C-W>l
-	map <C-H> <C-W>h
+	map <C-J> <C-W>j<C-W>_
+	map <C-K> <C-W>k<C-W>_
+	map <C-L> <C-W>l<C-W>_
+	map <C-H> <C-W>h<C-W>_
 	
     " Wrapped lines goes down/up to next row, rather than next line in file.
     nnoremap j gj
@@ -471,6 +471,9 @@ function! NERDTreeInitAsNeeded()
         wincmd l
     endif
 endfunction
+
+nmap SSA :wa<CR>:mksession! ~/sessions/
+nmap SO :wa<CR>:so ~/sessions/
 
 " Use local vimrc if available {
     if filereadable(expand("~/.vimrc.local"))
