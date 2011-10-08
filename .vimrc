@@ -103,7 +103,6 @@
 	set showmatch					" show matching brackets/parenthesis
 	set incsearch					" find as you type search
 	set hlsearch					" highlight search terms
-	nmap ; :set invhlsearch<CR>
 	set winminheight=0				" windows can be 0 line high 
 	set ignorecase					" case insensitive search
 	set smartcase					" case sensitive when uc present
@@ -123,10 +122,10 @@
 " Formatting {
 	set nowrap                     	" wrap long lines
 	set autoindent                 	" indent at the same level of the previous line
-	set shiftwidth=2               	" use indents of 4 spaces
+	set shiftwidth=4               	" use indents of 4 spaces
 	set expandtab 	  	     		" tabs are spaces, not tabs
-	set tabstop=2 					" an indentation every four columns
-	set softtabstop=2 				" let backspace delete indent
+	set tabstop=4 					" an indentation every four columns
+	set softtabstop=4 				" let backspace delete indent
 	"set matchpairs+=<:>            	" match, to be used with % 
 	set pastetoggle=<F12>          	" pastetoggle (sane indentation on pastes)
 	"set comments=sl:/*,mb:*,elx:*/  " auto format comment blocks
@@ -181,8 +180,6 @@
 	nmap <leader>f7 :set foldlevel=7<CR>
 	nmap <leader>f8 :set foldlevel=8<CR>
 	nmap <leader>f9 :set foldlevel=9<CR>
-
-	nmap æ za
 
     "clearing highlighted search
     nmap <silent> <leader>/ :nohlsearch<CR>
@@ -471,9 +468,6 @@ function! NERDTreeInitAsNeeded()
         wincmd l
     endif
 endfunction
-
-nmap SSA :wa<CR>:mksession! ~/sessions/
-nmap SO :wa<CR>:so ~/sessions/
 
 " Use local vimrc if available {
     if filereadable(expand("~/.vimrc.local"))
